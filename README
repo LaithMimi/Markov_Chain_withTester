@@ -1,66 +1,49 @@
-Tweets Generator
+# Tweets Generator
 
-Overview:
-    This project implements a Markov Chain-based tweets generator.
-    It reads a corpus of text, builds a Markov Chain, and generates random tweets based on the input data.
+## Overview
+This project implements a Markov Chain-based tweets generator. It reads a corpus of text, builds a Markov Chain, and generates random tweets based on the input data.
 
-Features:
-    - Reads a corpus of text from a file.
-    - Builds a Markov Chain from the input text.
-    - Generates random tweets based on the Markov Chain.
-    - Includes debug statements for easier troubleshooting.
+## Features
+- Reads a corpus of text from a file.
+- Builds a Markov Chain from the input text.
+- Generates random tweets based on the Markov Chain.
+- Includes debug statements for easier troubleshooting.
 
-Requirements:
-    - C compiler (e.g., GCC)
-    - Standard C libraries (stdio.h, stdlib.h, string.h)
+## Requirements
+- C compiler (e.g., GCC)
+- Standard C libraries (stdio.h, stdlib.h, string.h)
 
-Files:
-    - tweets_generator.c: Main program file.
-    - markov_chain.c: Implementation of the Markov Chain.
-    - linked_list.c: Implementation of a linked list used by the Markov Chain.
-    - markov_chain.h: Header file for the Markov Chain.
-    - linked_list.h: Header file for the linked list.
-
-Usage:
-    Compilation
-    To compile the program, use the following command:
-    gcc -g -o tweets_generator tweets_generator.c markov_chain.c linked_list.c -lm
+## Files
+- `tweets_generator.c`: Main program file.
+- `markov_chain.c`: Implementation of the Markov Chain.
+- `linked_list.c`: Implementation of a linked list used by the Markov Chain.
+- `markov_chain.h`: Header file for the Markov Chain.
+- `linked_list.h`: Header file for the linked list.
+- `ex1_tester.py`: Python script to test the program.
 
 
-Running the Program:
-    To run the program, use the following command:
-    ./tweets_generator <seed> <tweets_to_generate> <corpus_path> <max_words>
+## Usage
+
+### Compilation
+To compile the program, use the following command:
+```bash
+gcc tweets_generator.c markov_chain.c linked_list.c -o tweetsGenerator
+```
+
+### Execution
+To run the program, use the following command:
+```bash
+./tweetsGenerator <corpus_file> <num_tweets> <tweet_length>
+```
+
+Where:
+- `<corpus_file>`: Path to the file containing the corpus of text.
+- `<num_tweets>`: Number of tweets to generate.
+- `<tweet_length>`: Maximum length of each tweet.
+
+### Example
+```bash
+./tweetsGenerator justdoit_tweets.txt 5 140
+```
 
 
-- <seed>: Seed for the random number generator.
-- <tweets_to_generate>: Number of tweets to generate.
-- <corpus_path>: Path to the corpus text file.
-- <max_words>: Maximum number of words to read from the corpus.
-
-Example:
-    ./tweets_generator 123 5 justdoit_tweets.txt 10
-
-
-Functions:
-initialize_markov_chain:
-    Initializes the Markov Chain.
-fill_database:
-    Fills the Markov Chain database with words from the corpus.
-add_to_database:
-    Adds a word to the Markov Chain database.
-get_node_from_database:
-    Retrieves a node from the Markov Chain database.
-add_node_to_frequency_list:
-    Adds a transition between two nodes in the Markov Chain.
-get_first_random_node:
-    Selects the first random node from the Markov Chain.
-get_next_random_node:
-    Selects the next random node based on the current node's frequency list.
-generate_tweet:
-    Generates a tweet starting from a given node.
-free_database:
-    Frees the memory allocated for the Markov Chain.
-
-
-License:
-    This project is licensed under the MIT License.
