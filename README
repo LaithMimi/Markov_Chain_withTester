@@ -1,49 +1,126 @@
-# Tweets Generator
+---
 
-## Overview
-This project implements a Markov Chain-based tweets generator. It reads a corpus of text, builds a Markov Chain, and generates random tweets based on the input data.
+# 🐦 Tweets Generator - Powered by Markov Chains! 🎲  
 
-## Features
-- Reads a corpus of text from a file.
-- Builds a Markov Chain from the input text.
-- Generates random tweets based on the Markov Chain.
-- Includes debug statements for easier troubleshooting.
+## ✨ Overview  
+Ever wondered how AI can mimic human-like tweets? This **Tweets Generator** takes in a text corpus, builds a **Markov Chain**, and generates **realistic, random tweets**—just like magic! ✨  
 
-## Requirements
-- C compiler (e.g., GCC)
-- Standard C libraries (stdio.h, stdlib.h, string.h)
+🚀 **How it Works:**  
+- Reads a given **corpus** of text 📜  
+- Constructs a **Markov Chain** to learn word transitions 🔗  
+- Generates **new tweets** that feel natural 📝  
 
-## Files
-- `tweets_generator.c`: Main program file.
-- `markov_chain.c`: Implementation of the Markov Chain.
-- `linked_list.c`: Implementation of a linked list used by the Markov Chain.
-- `markov_chain.h`: Header file for the Markov Chain.
-- `linked_list.h`: Header file for the linked list.
-- `ex1_tester.py`: Python script to test the program.
+---
 
+## 🔥 Features  
+✅ **Smart Text Generation:** Generates **coherent** tweets based on a given dataset.  
+✅ **Markov Chain Implementation:** Uses **probability-based** word prediction.  
+✅ **Fully Customizable:** Define **tweet length** and **number of tweets** generated.  
+✅ **Fast & Efficient:** Uses **linked lists** for smooth data handling.  
+✅ **Memory Leak Detection:** Integrated **Valgrind testing** to ensure stability.  
 
-## Usage
+---
 
-### Compilation
-To compile the program, use the following command:
+## 🛠️ Requirements  
+To get started, make sure you have:  
+- **A C Compiler** (e.g., GCC)  
+- **Standard C Libraries** (`stdio.h`, `stdlib.h`, `string.h`)  
+- **Python 3** (for the automated tester)  
+
+---
+
+## 📂 Project Files  
+| File Name             | Description 📌 |
+|-----------------------|----------------------------------|
+| `tweets_generator.c`  | Main program that reads input and generates tweets |
+| `markov_chain.c`      | Implementation of the **Markov Chain** logic |
+| `linked_list.c`       | Efficient **linked list** for data storage |
+| `markov_chain.h`      | Header file for Markov Chain functions |
+| `linked_list.h`       | Header file for the Linked List |
+| `ex1_tester.py`       | **Python tester script** to validate program behavior |
+
+---
+
+## 🏗️ Compilation  
+Compile the program with:  
 ```bash
-gcc tweets_generator.c markov_chain.c linked_list.c -o tweetsGenerator
+gcc -Wall -Wextra -Wvla -std=c99 tweets_generator.c markov_chain.c linked_list.c -o
+tweets_generator
 ```
 
-### Execution
-To run the program, use the following command:
+---
+
+## 🚀 Running the Generator  
+To run the program, use:  
 ```bash
 ./tweetsGenerator <corpus_file> <num_tweets> <tweet_length>
 ```
 
-Where:
-- `<corpus_file>`: Path to the file containing the corpus of text.
-- `<num_tweets>`: Number of tweets to generate.
-- `<tweet_length>`: Maximum length of each tweet.
+📌 **Arguments:**  
+- **`<corpus_file>`**: Path to the text file used for training.  
+- **`<num_tweets>`**: Number of tweets to generate.  
+- **`<tweet_length>`**: Max number of words in each tweet.  
 
-### Example
+---
+
+## 📌 Example Usage  
+### **Generating 5 tweets from a dataset of Nike tweets**  
 ```bash
 ./tweetsGenerator justdoit_tweets.txt 5 140
 ```
+🔹 **Example Output:**  
+```
+Tweet 1: Just do it! No excuses.  
+Tweet 2: Believe in something. Even if it means sacrificing everything.  
+Tweet 3: Run faster, push harder. No limits.  
+Tweet 4: Greatness is earned, not given.  
+Tweet 5: Be legendary. Just do it.  
+```
 
+---
+
+## 🧪 Automated Testing 🛠️  
+### **Run All Tests**  
+To check your program against a set of predefined test cases, use:  
+```bash
+python3 ex1_tester.py
+```
+👀 **What It Tests:**  
+✅ Proper **error handling** for missing arguments or files  
+✅ Ensures **random tweets** match the expected format  
+✅ Detects **memory leaks** using Valgrind  
+✅ Validates **probability-based** word selection  
+
+---
+
+## 🛑 Troubleshooting  
+
+❓ **Program doesn't compile?**  
+- Check the `stdout_compilation.txt` file for detailed error messages.  
+- Make sure all required `.c` and `.h` files are present.  
+
+❓ **Tester script fails due to missing files?**  
+- Ensure `expected/` folder contains the necessary test files.  
+- Run `ls expected/` to check if files exist.  
+
+❓ **Valgrind reports memory leaks?**  
+- Debug with:  
+  ```bash
+  valgrind --leak-check=full ./tweetsGenerator justdoit_tweets.txt 5 140
+  ```  
+- Ensure **all allocated memory** is freed properly.  
+
+---
+
+## 🌟 Why Use This?  
+Whether you're **exploring AI-generated content**, **learning Markov Chains**, or just having fun with **random tweet generation**, this project is a **great starting point**! 🚀  
+
+🔥 **Want to take it further?**  
+- Improve randomness by tweaking **word probabilities**.  
+- Add **more datasets** for diverse text generation.  
+- Convert it into a **Twitter bot** using APIs!  
+
+---
+
+📢 **Get Ready to Generate Some Tweets!** 🐦✨  
 
